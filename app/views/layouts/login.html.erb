@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Payslip</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style type="text/css">
+
+      body {
+        background: url("/images/login-bg.jpg");
+        background-size: 1000px 1000px;
+      }
+
+      .account-wall {
+        margin-top: 80px;
+        padding: 20px 20px 10px;
+        position: relative;
+      }
+      .form-control.form-white {
+        border: 1px solid #bbbbbb;
+      }
+
+      .append-icon {
+        position: relative;
+      }
+
+      .m-b-10 {
+        margin-bottom: 10px !important;
+      }
+
+      .m-b-20 {
+        margin-bottom: 20px !important;
+      }
+
+      .append-icon input {
+        padding-right: 36px;
+      }
+
+      .append-icon i {
+        color: rgba(27,30,37,0.3);
+        font-size: 14px;
+        height: 34px;
+        left: auto;
+        line-height: 34px;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 36px;
+      }
+
+      .account .btn {
+        font-size: 15px;
+        padding: 6px 48px 6px;
+      }
+
+      .ladda-button {
+        position: relative;
+      }
+
+      .c-white {
+        color: #fff;
+      }
+
+      .theme-green-bg {
+        background: #7AB800 !important;
+      }
+
+      #logo img {
+        height: 120px;
+        margin-right: 40px;
+        margin-bottom: 20px;
+      }
+
+      footer {
+        background-color: transparent;
+      }
+
+      footer span {
+        color: #0a0a0a;
+      }
+
+    </style>
+  </head>
+
+  <body >
+
+    <!--[if lt IE 7]>
+    <p class="browsehappy">您的浏览器<strong>版本过低</strong>. 请<a href="http://browsehappy.com/">更新您的浏览器</a>.</p>
+    <![endif]-->
+
+    <!-- BEGIN LOGIN BOX -->
+    <div class="container" id="login-block">
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+          <div class="account-wall">
+            <div id="logo" class="text-center cola-gray-4" style="font-size: 15px;">
+              <img style="" src="/images/logo.jpg" alt="Logo" />
+            </div>
+
+            <% if flash[:error] %>
+                <div class="alert alert-danger fade in">
+                  <%= flash[:error] %>
+                </div>
+            <% end %>
+
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="append-icon m-b-10">
+                  <!--input type="email" name="admin[email]" id="username" class="form-control form-white username" placeholder="Email" required-->
+                  <%= f.text_field :email, :type => 'email', :class => 'form-control form-white username', :placeholder => 'Email', :required => true %>
+                  <i class="icon-user"></i>
+                </div>
+                <div class="append-icon m-b-20">
+                  <input type="password" name="admin[password]" class="form-control form-white password" placeholder="密码" required>
+                  <i class="icon-lock"></i>
+                </div>
+
+                <button type="submit" class="btn btn-lg btn-block ladda-button theme-green-bg c-white" data-style="expand-left">登 录
+                </button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END LOGIN BOX -->
+
+    <!-- footer -->
+    <%= render partial: 'layouts/footer' %>
+
+  </body>
+</html>
