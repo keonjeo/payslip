@@ -1,0 +1,41 @@
+<!-- START PANEL -->
+<div style="width: 100%; height: 55px; background-color: #dedddd">
+
+  <%=form_tag employees_path, method: :get do |f| %>
+      <span style="font-size: 20px;">Search Condition: </span>
+      <%= select_tag('pay_period', options_from_collection_for_select(@pay_periods, "id", "pay_period", params[:pay_period])) %>
+      <%=submit_tag 'search', class: "btn btn-default search-btn"  %>
+  <% end %>
+  <%= link_to "IMPORT CSV", new_employee_path, class: "btn btn-warning import-btn pull-right" %>
+  <!--<button class="btn btn-warning import-btn pull-right" data-toggle="modal" data-target="#page-dialog">IMPORT CSV</button>-->
+</div>
+
+<hr style="margin: 10px"/>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th class="col-lg-2 col-md-2 col-sm-2 name">name</th>
+      <th class="col-lg-2 col-md-2 col-sm-2">pay period</th>
+      <th class="col-lg-2 col-md-2 col-sm-2">gross income</th>
+      <th class="col-lg-2 col-md-2 col-sm-2">income tax</th>
+      <th class="col-lg-2 col-md-2 col-sm-2">net income</th>
+      <th class="col-lg-2 col-md-2 col-sm-2">super</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+        <tr>
+          <td class="col-lg-2 col-md-2 col-sm-2 name"><%= employee.name %></td>
+          <td class="col-lg-2 col-md-2 col-sm-2"><%= employee.pay_period %></td>
+          <td class="col-lg-2 col-md-2 col-sm-2"><strong>$</strong> <%= employee.gross_income %></td>
+          <td class="col-lg-2 col-md-2 col-sm-2"><strong>$</strong> <%= employee.income_tax %></td>
+          <td class="col-lg-2 col-md-2 col-sm-2"><strong>$</strong> <%= employee.net_income %></td>
+          <td class="col-lg-2 col-md-2 col-sm-2"><strong>$</strong> <%= employee.super_res %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- END PANEL -->

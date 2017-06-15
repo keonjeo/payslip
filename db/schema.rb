@@ -29,4 +29,19 @@ ActiveRecord::Schema.define(version: 20170615014759) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
   end
 
+
+  create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "first_name",                                            null: false
+    t.string   "last_name",                                             null: false
+    t.integer  "annual_salary",                                         null: false
+    t.decimal  "super_rate",    precision: 8, scale: 2, default: "0.0"
+    t.string   "pay_period",                                            null: false
+    t.integer  "gross_income"
+    t.integer  "income_tax"
+    t.integer  "net_income"
+    t.integer  "super_res"
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
+  end
+
 end

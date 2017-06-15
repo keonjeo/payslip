@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     root to: 'admins/sessions#new'
   end
 
+  resources :employees, :only => [:index, :new, :create]
+  
 end
