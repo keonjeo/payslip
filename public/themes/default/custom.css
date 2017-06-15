@@ -1,0 +1,108 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+/******************************
+ *
+ * Side bar
+ *
+ ******************************/
+.sidebar {
+    width: 200px;
+    height: 100%;
+    background-color: #7AB800;
+    /*background-color: red;*/
+}
+
+.sidebar .logo-panel {
+    padding: 10px;
+}
+
+.sidebar .sidebar-inner .sidebar-footer i {
+    color: #337ab7;
+}
+
+.sidebar .sidebar-inner .sidebar-footer {
+    position: fixed;
+    bottom: 30px;
+    clear: both;
+    display: block;
+    left: 0;
+    padding: 0;
+    z-index: 1000;
+}
+
+.sidebar .sidebar-inner .sidebar-footer .pull-left {
+    float: left !important;
+    padding: 6px 25px;
+    text-align: center;
+    width: 33.33%;
+}
+
+.sidebar .sidebar-inner .nav-menu {
+    margin-top: 15px;
+    height: 800px;
+    background-color: #2E2F30;
+}
+
+.topbar {
+    background: #ffffff;
+    left: 200px;
+    height: 55px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 300;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+}
+
+.topbar .navbar-nav {
+    padding: 5px 20px 0 0;
+}
+
+.topbar .header-right {
+    float: right;
+}
+
+.topbar .header-right .text-center {
+    padding: 4px 0px;
+}
+
+.main-content {
+    background: #f2f2f2 none repeat scroll 0 0;
+    margin-left: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.main-content .page-content {
+    margin: 68px 0 0 15px;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+}
+
+.main-content .page-content.page-thin {
+    padding: 15px 200px 0 15px;
+}
+
+.main-content .search-btn {
+    background-color: #7AB800;
+    margin: 11px 0 10px 25px;
+}
+
+.main-content .import-btn {
+    margin-top: -45px;
+    margin-right: 25px;
+}
+
+#pay_period {
+    width: 240px;
+    height: 30px;
+    font-size: 18px;
+}

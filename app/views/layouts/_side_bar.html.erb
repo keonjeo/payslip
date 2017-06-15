@@ -1,0 +1,40 @@
+<!-- BEGIN SIDEBAR -->
+<div class="sidebar">
+  <div class="logo-panel">
+    <a href="/home/console">
+      <%= image_tag "/images/logo.jpg", height: 20 %>
+      &nbsp;&nbsp;
+      <span style="font-size: 20px; vertical-align: middle; letter-spacing: 0px; color: #fff;">
+        EPM SYSTEM
+      </span>
+    </a>
+  </div>
+  <hr style="margin: -2px 0px 4px;">
+  <div class="sidebar-inner">
+    <%= image_tag "/images/admin.png", height: 80 , style: 'border-radius: 50%; margin: 4px 50px;' %>
+    <div style="display: block;">
+      <h4 style="color: #fff; text-align: center"><%= current_admin.email %></h4>
+    </div>
+
+    <div class="nav-menu">
+      <ul class="nav nav-sider">
+        <li>
+          <a href=<%= employees_path %> onclik style="padding-bottom: 2px">
+            <i style="margin: 5px 10px 0 0" class="icon icon-credit-card"></i>
+            <span style="">payslip management</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-footer">
+      <a class="pull-left" href="#" data-rel="tooltip" data-placement="top" data-original-title="设置">
+        <i class="icon-settings"></i></a>
+      <a class="pull-left" href="#" data-rel="tooltip" data-placement="top" data-original-title="全屏显示">
+        <i class="icon-size-fullscreen"></i></a>
+      <a class="pull-left" href="<%= destroy_admin_session_path %>" data-rel="tooltip" data-placement="top" data-original-title="锁屏">
+        <i class="icon-lock"></i></a>
+    </div>
+  </div>
+</div>
+<!-- END SIDEBAR -->

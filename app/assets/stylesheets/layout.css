@@ -1,0 +1,123 @@
+/******************************************************
+ *  clear the default style of the browser
+ ******************************************************/
+
+html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, blockquote, pre, hr, figure,
+table, caption, th, td, form, fieldset, legend, input, button, textarea, menu { margin: 0; padding: 0; }
+
+header, footer, section, article, aside, nav, address, figure,figcaption, menu, details { display: block; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th { text-align: left; font-weight: normal; }
+
+html, body, fieldset, img, iframe, abbr { border: 0; }
+
+i, cite, em, var, address, dfn { font-style: normal; }
+
+[hidefocus], summary { outline: 0; }
+
+li { list-style: none; }
+
+h1, h2, h3, h4, h5, h6, small { font-size: 100%; }
+
+sup, sub { font-size: 83%; }
+
+pre, code, kbd, samp { font-family: inherit; }
+
+q:before, q:after { content: none; }
+
+textarea { overflow: auto; resize: none; }
+
+label, summary { cursor: default; }
+
+a, button { cursor: pointer; }
+
+h1, h2, h3, h4, h5, h6, em, strong, b { font-weight: bold; }
+
+del, ins, u, s, a, a:hover { text-decoration: none; }
+
+body, textarea, input, button, select, keygen, legend { font: 12px/1.14 arial,\5b8b\4f53; color: #333; outline: 0; }
+
+body { background: #fff; }
+
+a, a:hover { color: #333; }
+
+/* end of clearing the default stylesheet of the browser */
+
+
+
+/******************************************************
+ *                   body section
+ ******************************************************/
+body {
+    font-size: 12px;
+    font-family: 'Open Sans', arial, tahoma, sans-serif;
+    /*background: url(/images/bg.png) repeat 0 0 fixed;*/
+}
+
+
+
+
+/******************************************************
+ *                   header section
+ ******************************************************/
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 60px;
+    padding: 10px;
+    background-color: #2e3642;
+}
+
+header .header {
+    width: 800px;
+    margin: 0 auto;
+}
+
+header .head-title {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    line-height: 35px;
+}
+
+header .header img {
+    margin-right: 10px;
+    position: relative;
+    top: -6px;
+}
+
+
+header .header span {
+    color: #cccccc;
+    font-size: 30px;
+}
+
+
+/******************************************************
+ *                   footer section
+ ******************************************************/
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 30px;
+    padding: 4px;
+    background-color: #2e3642;
+}
+
+footer .footer {
+    width: 800px;
+    margin: 0 auto;
+}
+
+footer span {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: #CCCCCC;
+    line-height: 23px;
+}

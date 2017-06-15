@@ -1,0 +1,48 @@
+<!--<header>-->
+  <!--<div class="header">-->
+    <!--<div class="head-title">-->
+      <!--&lt;!&ndash;<img src="/images/logo.jpg" width="28px" height="28px" style="display: inline"/>&ndash;&gt;-->
+      <!--<span style="display: inline">Employee Payslip Management System</span>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</header>-->
+
+
+<!-- BEGIN TOPBAR -->
+<div class="topbar">
+  <div class="header-right">
+    <ul class="header-menu nav navbar-nav">
+      <!-- BEGIN USER DROPDOWN -->
+      <li class="text-center" id="date" style="margin: 10px"></li>
+      <li class="text-center" id="time" style="margin-top: 10px"></li>
+      <!-- END USER DROPDOWN -->
+    </ul>
+  </div>
+  <!-- header-right -->
+</div>
+<!-- END TOPBAR -->
+
+<script type="text/javascript" language="javascript">
+  Date.prototype.Format = function (fmt) { //author: meizz
+    var o = {
+      "M+": this.getMonth() + 1, //月份
+      "d+": this.getDate(), //日
+      "h+": this.getHours(), //小时
+      "m+": this.getMinutes(), //分
+      "s+": this.getSeconds(), //秒
+      "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+      "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+      if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+  }
+
+  function setTime() {
+    var currentTime = new Date();
+    document.getElementById("time").innerHTML = currentTime.Format("hh:mm:ss");
+    document.getElementById("date").innerHTML = currentTime.Format("yyyy/MM/dd");
+  }
+  setInterval(setTime, 1000);
+</script>

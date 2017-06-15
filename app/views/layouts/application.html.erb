@@ -2,13 +2,81 @@
 <html>
   <head>
     <title>Payslip</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/images/favicon.ico">
     <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag '/fonts/line-icons/simple-line-icons' %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag "/themes/default/custom.css", media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "/themes/default/custom.js" %>
+
   </head>
 
   <body>
-    <%= yield %>
+
+    <!--[if lt IE 7]>
+    <p class="browsehappy">您的浏览器<strong>版本过低</strong>. 请<a href="http://browsehappy.com/">更新您的浏览器</a>.</p>
+    <![endif]-->
+
+    <%= render partial: 'layouts/side_bar' %>
+
+    <div class="main-content" style="min-width: 1150px">
+      <%= render partial: 'layouts/header' %>
+      <div class="page-content page-thin">
+        <!-- START CONTAINER FLUID -->
+        <div class="container-fluid">
+          <!-- BEGIN PAGE CONTENT -->
+          <%= yield %>
+          <!-- END PAGE CONTENT -->
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <%= render partial: 'layouts/footer' %>
+
+    <!-- Common Modal -->
+    <div id="confirm-dialog" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close"
+                    data-dismiss="modal" aria-hidden="true">
+              &times;
+            </button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body clearfix">
+            <!-- content here -->
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-default" data-dismiss="modal">Close</a>
+            <a class="btn btn-primary btn-confirm-ok cola-green-bg">Save</a>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+    </div>
+
+    <!-- Page Modal -->
+    <div id="page-dialog" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Ttile</h4>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+    </div>
+
   </body>
 </html>
