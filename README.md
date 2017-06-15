@@ -34,6 +34,10 @@ Things you may want to cover:
 
 * ...
 
+## Note:
+ login user: admin@payslip.com
+ password:   admin123
+
 
 # [ Description ]:
 When I input the employee's details: first name, last name, annual salary(positive integer) and super rate(0% - 50% inclusive), payment start date, the program should generate payslip information with name, pay period, gross income, income tax, net income and super.
