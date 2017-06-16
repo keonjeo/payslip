@@ -4,9 +4,7 @@ class Employee < ApplicationRecord
   validates :first_name, :last_name, :annual_salary, :super_rate, :pay_period, presence: true
   validates :annual_salary, numericality: { only_integer: true, greater_than: 0 }
 
-  before_validation(on: :create) do
-    calculation_rate
-  end
+  before_create :calculation_rate
 
   def name
     "#{first_name} #{last_name}"

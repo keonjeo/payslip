@@ -4,7 +4,7 @@ class Admins::SessionsController < Devise::SessionsController
   layout 'layouts/login', :only => :new
 
   skip_before_action :authenticate_admin!, :only => :new
-  skip_before_filter :verify_authenticity_token, :only => :create
+  skip_before_action :verify_authenticity_token, :only => :create
 
   # before_action :configure_sign_in_params, only: [:create]
 

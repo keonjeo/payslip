@@ -1,14 +1,19 @@
 require 'test_helper'
 
 class EmployeesControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get employees_index_url
-    assert_response :success
+
+  # For Devise >= 4.1.1
+  include Devise::Test::ControllerHelpers
+
+  def setup
+    @password = "kitty@123#"
+    @confirmed_admin = Admin.create(email: "kitty@payslip.com",
+                                  password: @password)
   end
 
-  test "should get new" do
-    get employees_new_url
-    assert_response :success
+  test "successful login of confirmed admin" do
+    sign_in(admin: @confirmed_admin)
+    assert_redirected_to employees_path
   end
 
 end

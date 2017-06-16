@@ -3,9 +3,25 @@
 # This model initially had no columns defined. If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+
+
+correct_data_groud_1:
+  first_name: Paul
+  last_name: Deng
+  annual_salary: 120000
+  super_rate: 0.1
+  pay_period: 01 March - 31 March
+  gross_income: 10000
+  income_tax: rate_level(:annual_salary)
+  net_income: 7304
+  super_res: 1000
+correct_data_groud_2:
+  first_name: Ryan
+  last_name: Chen
+  annual_salary: 60050
+  super_rate: 0.09
+  pay_period: 01 May - 31 May
+  gross_income: 5004
+  income_tax: 922
+  net_income: 4082
+  super_res: 450
